@@ -1,18 +1,15 @@
 package com.wsx.demo.fecade.computerabstract.facade;
 
-//import com.wsx.demo.fecade.computerabstract.abstractfactory.ComputerModuleFactory;
+import com.wsx.demo.fecade.computerabstract.abstractfactory.ComputerModuleFactory;
+import com.wsx.demo.fecade.computerabstract.factory.CommonComputerFactory;
 import com.wsx.demo.fecade.computerabstract.service.CPU;
 import com.wsx.demo.fecade.computerabstract.service.Disk;
 import com.wsx.demo.fecade.computerabstract.service.GPU;
 import com.wsx.demo.fecade.computerabstract.service.Memory;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonCPU;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonDisk;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonGPU;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonMemory;
 
 // 外观类
 public class CommonComputer extends AbstractComputerFacade{
-//	private ComputerModuleFactory moduleFactory = null;
+	private ComputerModuleFactory moduleFactory = null;
 	private CPU cpu = null;
 	private Memory memory = null;
 	private GPU gpu = null;
@@ -39,9 +36,16 @@ public class CommonComputer extends AbstractComputerFacade{
 	}
 	
 	public CommonComputer() {
+		// 使用工厂类创建对象
+		moduleFactory = new CommonComputerFactory();
+		cpu = moduleFactory.createCPU();
+		memory = moduleFactory.createMemory();
+		gpu = moduleFactory.createGPU();
+		disk = moduleFactory.createDisk();
+		/* 直接创建对象
 		cpu = new CommonCPU();
 		memory = new CommonMemory();
 		gpu = new CommonGPU();
-		disk = new CommonDisk();
+		disk = new CommonDisk();*/
 	}
 }

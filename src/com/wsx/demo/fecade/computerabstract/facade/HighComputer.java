@@ -1,16 +1,15 @@
 package com.wsx.demo.fecade.computerabstract.facade;
 
+import com.wsx.demo.fecade.computerabstract.abstractfactory.ComputerModuleFactory;
+import com.wsx.demo.fecade.computerabstract.factory.HighComputerFactory;
 import com.wsx.demo.fecade.computerabstract.service.CPU;
 import com.wsx.demo.fecade.computerabstract.service.Disk;
 import com.wsx.demo.fecade.computerabstract.service.GPU;
 import com.wsx.demo.fecade.computerabstract.service.Memory;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.HighCPU;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.HighDisk;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.HighGPU;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.HighMemory;
 
 // 外观类
 public class HighComputer extends AbstractComputerFacade{
+	private ComputerModuleFactory moduleFactory = null;
 	private CPU cpu = null;
 	private Memory memory = null;
 	private GPU gpu = null;
@@ -37,9 +36,11 @@ public class HighComputer extends AbstractComputerFacade{
 	}
 	
 	public HighComputer() {
-		cpu = new HighCPU();
-		memory = new HighMemory();
-		gpu = new HighGPU();
-		disk = new HighDisk();
+		// 使用工厂类创建对象
+		moduleFactory = new HighComputerFactory();
+		cpu = moduleFactory.createCPU();
+		memory = moduleFactory .createMemory();
+		gpu = moduleFactory.createGPU();
+		disk = moduleFactory.createDisk();
 	}
 }

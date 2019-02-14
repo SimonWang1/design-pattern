@@ -5,35 +5,35 @@ import com.wsx.demo.fecade.computerabstract.service.CPU;
 import com.wsx.demo.fecade.computerabstract.service.Disk;
 import com.wsx.demo.fecade.computerabstract.service.GPU;
 import com.wsx.demo.fecade.computerabstract.service.Memory;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonCPU;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonDisk;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonGPU;
-import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonMemory;
+import com.wsx.demo.fecade.computerabstract.serviceimpl.HighCPU;
+import com.wsx.demo.fecade.computerabstract.serviceimpl.HighDisk;
+import com.wsx.demo.fecade.computerabstract.serviceimpl.HighGPU;
+import com.wsx.demo.fecade.computerabstract.serviceimpl.HighMemory;
 
 // 具体工厂
-public class CommonComputerFactory implements ComputerModuleFactory{
+public class HighComputerFactory implements ComputerModuleFactory{
 
 	@Override
 	public CPU createCPU() {
-		CPU cpu = new CommonCPU();
+		CPU cpu = new HighCPU();
 		return cpu;
 	}
 
 	@Override
 	public Disk createDisk() {
-		Disk disk = new CommonDisk();
+		Disk disk = new HighDisk();
 		return disk;
 	}
 
 	@Override
 	public GPU createGPU() {
-		GPU gpu = new CommonGPU();
+		GPU gpu = new HighGPU();
 		return gpu;
 	}
 
 	@Override
 	public Memory createMemory() {
-		Memory memory = new CommonMemory();
+		Memory memory = new HighMemory();
 		return memory;
 	}
 }

@@ -4,6 +4,7 @@ import com.wsx.demo.fecade.computerabstract.facade.AbstractComputerFacade;
 import com.wsx.demo.fecade.computerabstract.facade.CommonComputer;
 import com.wsx.demo.fecade.computerabstract.facade.HighComputer;
 
+// 简单工厂模式选择类型
 public class ComputerFactory {
 	public static AbstractComputerFacade getComputerType(String type) {
 		AbstractComputerFacade computer = null;

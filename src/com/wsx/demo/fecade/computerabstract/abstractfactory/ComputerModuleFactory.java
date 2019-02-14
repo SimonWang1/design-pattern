@@ -5,6 +5,7 @@ import com.wsx.demo.fecade.computerabstract.service.Disk;
 import com.wsx.demo.fecade.computerabstract.service.GPU;
 import com.wsx.demo.fecade.computerabstract.service.Memory;
 
+// 抽象工厂类
 public interface ComputerModuleFactory {
 	public CPU createCPU();
 	
