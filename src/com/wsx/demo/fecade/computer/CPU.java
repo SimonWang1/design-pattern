@@ -1,6 +1,7 @@
 package com.wsx.demo.fecade.computer;
 
 public class CPU {
+	
 	public void startup() {
 		System.out.println("cpu startup!");
 	}

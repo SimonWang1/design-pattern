@@ -4,15 +4,18 @@ import com.wsx.demo.fecade.computerabstract.facade.AbstractComputerFacade;
 import com.wsx.demo.fecade.computerabstract.facade.CommonComputer;
 import com.wsx.demo.fecade.computerabstract.facade.HighComputer;
 
-// 简单工厂模式选择类型
+// 简单工厂对外观类进行类型选择
 public class ComputerFactory {
+	
 	public static AbstractComputerFacade getComputerType(String type) {
-		AbstractComputerFacade computer = null;
 		if (type.equalsIgnoreCase("commonComputer")) {
-			computer = new CommonComputer();
-		} else if (type.equalsIgnoreCase("highComputer")) {
-			computer = new HighComputer();
+			return new CommonComputer();
 		}
-		return computer;
+		if (type.equalsIgnoreCase("highComputer")) {
+			return new HighComputer();
+		}
+		return null;
 	}
+	
+	private ComputerFactory() {}
 }

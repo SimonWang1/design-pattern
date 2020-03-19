@@ -1,9 +1,12 @@
 package com.wsx.demo.fecade.computer;
 
-// 外观类
+// 未改造前
 public class Computer {
+	
 	private CPU cpu = null;
+	
 	private Memory memory = null;
+	
 	private Disk disk = null;
 	
 	public void startup() {

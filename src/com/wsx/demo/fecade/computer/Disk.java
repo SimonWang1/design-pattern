@@ -1,6 +1,7 @@
 package com.wsx.demo.fecade.computer;
 
 public class Disk {
+	
 	public void startup() {
 		System.out.println("disk startup!");
 	}

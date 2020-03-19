@@ -10,30 +10,26 @@ import com.wsx.demo.fecade.computerabstract.serviceimpl.HighDisk;
 import com.wsx.demo.fecade.computerabstract.serviceimpl.HighGPU;
 import com.wsx.demo.fecade.computerabstract.serviceimpl.HighMemory;
 
-// 具体工厂
+// 高配电脑具体工厂
 public class HighComputerFactory implements ComputerModuleFactory{
 
 	@Override
 	public CPU createCPU() {
-		CPU cpu = new HighCPU();
-		return cpu;
+		return new HighCPU();
 	}
 
 	@Override
 	public Disk createDisk() {
-		Disk disk = new HighDisk();
-		return disk;
+		return new HighDisk();
 	}
 
 	@Override
 	public GPU createGPU() {
-		GPU gpu = new HighGPU();
-		return gpu;
+		return new HighGPU();
 	}
 
 	@Override
 	public Memory createMemory() {
-		Memory memory = new HighMemory();
-		return memory;
+		return new HighMemory();
 	}
 }

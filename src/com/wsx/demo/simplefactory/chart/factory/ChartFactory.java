@@ -5,17 +5,21 @@ import com.wsx.demo.simplefactory.chart.serviceimpl.HistogramChart;
 import com.wsx.demo.simplefactory.chart.serviceimpl.LineChart;
 import com.wsx.demo.simplefactory.chart.serviceimpl.PieChart;
 
-// 图表工厂类
+// 图表工厂
 public class ChartFactory {
+	
 	public static Chart getChart(String type) {
-		Chart chart = null;
 		if (type.equalsIgnoreCase("histogram")) {
-			chart = new HistogramChart();
-		} else if (type.equalsIgnoreCase("pie")) {
-			chart = new PieChart();
-		} else if (type.equalsIgnoreCase("line")) {
-			chart = new LineChart();
+			return new HistogramChart();
+		} 
+		if (type.equalsIgnoreCase("pie")) {
+			return new PieChart();
+		} 
+		if (type.equalsIgnoreCase("line")) {
+			return new LineChart();
 		}
-		return chart;
+		return null;
 	}
+	
+	private ChartFactory() {}
 }

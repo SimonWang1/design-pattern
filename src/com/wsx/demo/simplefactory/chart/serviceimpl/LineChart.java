@@ -2,7 +2,7 @@ package com.wsx.demo.simplefactory.chart.serviceimpl;
 
 import com.wsx.demo.simplefactory.chart.service.Chart;
 
-// 具体产品折线图
+// 折线图具体产品（业务实现）
 public class LineChart implements Chart {
 
 	@Override

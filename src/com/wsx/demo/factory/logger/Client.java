@@ -5,12 +5,11 @@ import com.wsx.demo.factory.logger.service.Logger;
 import com.wsx.demo.factory.logger.util.XMLUtil;
 
 public class Client {
+	
 	public static void main(String[] args) {
-		LoggerFactory factory = null;
-		Logger logger = null;
-		//	factory = new FileLoggerFactory();
-		factory = (LoggerFactory) XMLUtil.getBean();
-		logger = factory.createLogger();
+		// LoggerFactory	factory = new FileLoggerFactory();
+		LoggerFactory factory = (LoggerFactory) XMLUtil.getBean();
+		Logger logger = factory.createLogger();
 		logger.writeLog();
 	}
 }

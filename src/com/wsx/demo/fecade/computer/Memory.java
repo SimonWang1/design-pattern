@@ -1,6 +1,7 @@
 package com.wsx.demo.fecade.computer;
 
 public class Memory {
+	
 	public void startup() {
 		System.out.println("memory startup!");
 	}

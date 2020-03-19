@@ -2,7 +2,7 @@ package com.wsx.demo.simplefactory.chart.serviceimpl;
 
 import com.wsx.demo.simplefactory.chart.service.Chart;
 
-// 具体产品柱状图
+// 柱状图具体产品（业务实现）
 public class HistogramChart implements Chart {
 
 	@Override

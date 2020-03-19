@@ -10,30 +10,26 @@ import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonDisk;
 import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonGPU;
 import com.wsx.demo.fecade.computerabstract.serviceimpl.CommonMemory;
 
-// 具体工厂
+// 普通电脑具体工厂
 public class CommonComputerFactory implements ComputerModuleFactory{
 
 	@Override
 	public CPU createCPU() {
-		CPU cpu = new CommonCPU();
-		return cpu;
+		return new CommonCPU();
 	}
 
 	@Override
 	public Disk createDisk() {
-		Disk disk = new CommonDisk();
-		return disk;
+		return new CommonDisk();
 	}
 
 	@Override
 	public GPU createGPU() {
-		GPU gpu = new CommonGPU();
-		return gpu;
+		return new CommonGPU();
 	}
 
 	@Override
 	public Memory createMemory() {
-		Memory memory = new CommonMemory();
-		return memory;
+		return new CommonMemory();
 	}
 }

@@ -9,10 +9,13 @@ import com.wsx.demo.fecade.computerabstract.service.Memory;
 
 // 外观类
 public class HighComputer extends AbstractComputerFacade{
-	private ComputerModuleFactory moduleFactory = null;
+	
 	private CPU cpu = null;
+	
 	private Memory memory = null;
+	
 	private GPU gpu = null;
+	
 	private Disk disk = null;
 	
 	@Override
@@ -37,10 +40,15 @@ public class HighComputer extends AbstractComputerFacade{
 	
 	public HighComputer() {
 		// 使用工厂类创建对象
-		moduleFactory = new HighComputerFactory();
+		ComputerModuleFactory moduleFactory = new HighComputerFactory();
 		cpu = moduleFactory.createCPU();
 		memory = moduleFactory .createMemory();
 		gpu = moduleFactory.createGPU();
 		disk = moduleFactory.createDisk();
+		/* 直接创建对象
+		cpu = new HighCPU();
+		memory = new HighMemory();
+		gpu = new HighGPU();
+		disk = new HighDisk();*/
 	}
 }
